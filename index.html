@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../d3.min.js"></script>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    
+    <div class="Graphecontainer">
+
+    </div>
+    <script>
+        let width=800
+        let height=250
+        let tree_number=6.5
+        
+        const svg=d3.select('.Graphecontainer')
+                    .append('svg')
+                    .attr('width',width)
+                    .attr('height',height)
+        
+        svg.call(
+            TreeGraphe()
+                .width(width)
+                .height(height)
+                .tree(tree_number)
+                .stroke_width('6') 
+                .color_main('rgb(78, 163, 125)') 
+                .color_second('rgb(245, 209, 143)') 
+                .margintop(90) 
+                .TreesTitle( `In Senegal There Is : ${tree_number} K tree Per Km²` ) 
+        )
+
+    </script>
+</body>
+</html>
